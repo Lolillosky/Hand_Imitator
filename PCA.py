@@ -38,11 +38,11 @@ time.sleep(3)
 def pcaScenario():
     """Scenario to test servo"""
     for i in [0,2,4,6,8]:
-        for j in range(MIN_ANG[i],MAX_ANG[i],4*INC[i]):
+        for j in range(MIN_ANG[i],MAX_ANG[i],INC[i]):
             #print("Send angle {} to Servo {}".format(j,i))
             pca.servo[i].angle = j
             time.sleep(0.01)
-        for j in range(MAX_ANG[i],MIN_ANG[i],-4*INC[i]):
+        for j in range(MAX_ANG[i],MIN_ANG[i],-INC[i]):
             #print("Send angle {} to Servo {}".format(j,i))
             pca.servo[i].angle = j
             time.sleep(0.01)
